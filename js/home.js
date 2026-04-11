@@ -1,3 +1,5 @@
+    // Letter Filter
+
 function letterfilter(letter) {
     const cards = document.querySelectorAll(".card");
 
@@ -20,5 +22,32 @@ function letterfilter(letter) {
             }
         }
         
+    });
+}
+
+
+//   Category Filter
+
+function categoryfilter(category) {
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(function(card) {
+        let dataCategory = card.getAttribute("data-category").toLowerCase();
+        let categorylist = dataCategory.split(" ");
+
+        let found = false;
+
+        for (let i = 0; i < categorylist.length; i++) {
+            if (categorylist[i] === category.toLowerCase()) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
     });
 }
