@@ -1,5 +1,5 @@
 function addShow() {
-    const name = document.getElementById("name").value;
+    const name = document.getElementById("add-name").value;
     const message = document.getElementById("message");
     
     let firstLetter = name[0];
@@ -46,5 +46,5 @@ function addShow() {
 }
 
 function clearInputs() {
-    const name = document.getElementById("name").value="";
+    const name = document.getElementById("add-name").value="";
 }
