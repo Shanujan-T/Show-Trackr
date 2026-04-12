@@ -38,15 +38,15 @@
           <h1>Log in</h1>
         </div>
         <div class="input-box">
-          <input type="email" placeholder="✉️ Email" required/>
+          <input type="email" placeholder="✉️ Email" id="loginemail" required/>
         </div>
         <div class="input-box">
-          <input type="password" placeholder="🔑 Password" minlength="5" required/>
+          <input type="password" id="loginpassword" placeholder="🔑 Password" minlength="5" required/>
         </div>
-        <button class="login-button">Log in</button>
+        <button class="loginButton">Log in</button>
         <div class="forgot"><a href="#" class="forgot-link">Forgot your password?</a></div>
         <p class="signup">
-          Don't have an account yet? <a href="signup.html">Sign up</a>
+          Don't have an account yet? <a href="#" onclick="redirectSignup()">Sign up</a>
         </p>
         <hr>
         <div class="devider">or</div>

@@ -439,6 +439,8 @@ body {
     text-align: center;
 }
 
+
+
 .header-login {
     margin-bottom: 20px;
     
@@ -455,7 +457,7 @@ body {
     border: 1px solid #a6a4a4;
 }
 
-.login-button {
+.loginButton {
     background-color: #4aad7a;
     border: 1px solid #24734a;
     width: 100%;
@@ -466,7 +468,7 @@ body {
     font-size: 15px;
 }
 
-.login-button:hover {
+.loginButton:hover {
     background-color: #1b5035;
 }
 
@@ -515,6 +517,10 @@ body {
     font-weight: bold;
     padding-top: 0;
     padding-bottom: 5px;
+}
+
+.container-login input {
+    margin-bottom: 15px;
 }
 
 .facebook {
@@ -567,6 +573,8 @@ body {
     text-align: center;
 }
 
+
+
 .div-signup {
     border: 2px solid black;
     border-style: dotted;
@@ -593,7 +601,7 @@ body {
     text-decoration: underline;
 }
 
-.signup-btn {
+.signupButton {
     width: 100%;
     background-color: #1478fa;
     border: 1px solid #0654ba;
@@ -605,9 +613,30 @@ body {
     margin-bottom: 15px;
 }
 
-.signup-btn:hover {
+.signupButton:hover {
     background-color: #034498;
 }
 
+.input-box {
+    margin-bottom: 0;
+}
 
 
+#signuppasswordError {
+    color: red;
+    font-size: 15px;
+    text-align: left;
+    margin-top: 0;
+}
+
+#signupemailError {
+    color: red;
+    font-size: 15px;
+    text-align: left;
+}
+
+#signupnameError {
+    color: red;
+    font-size: 15px;
+    text-align: left;
+}   
