@@ -1,4 +1,4 @@
-const users = [
+let users = [
     {email:"user1@gmail.com", password:"12345"},
     {email:"user2@gmail.com", password:"12345"},
     {email:"user3@gmail.com", password:"12345"},
@@ -7,18 +7,10 @@ const users = [
 ];
 
 function loginButton() {
-    const email = document.getElementById("loginemail").value;
-    const password = document.getElementById("loginpassword").value;
-
-    let validation = false;
-
-    for (let i = 0; i < users.length; i++) {
-        if (users[i].email === email && users[i].password === password){
-            validation = true;
-            break;
-        }
-    }
-    if (validation){
+    let email = document.getElementById("loginemail").value;
+    let password = document.getElementById("loginpassword").value;
+ 
+    if (email.includes("@") && email.includes(".") && password){
         alert("Login Successful");
     } else {
         alert("Login Failed")
