@@ -1,21 +1,15 @@
-let users = [];
+user = [];
 
 function signupButton() {
-    const name = document.getElementById("signupName").value.trim();
-    const email = document.getElementById("signupEmail").value.trim();
-    const password = document.getElementById("signupPassword").value.trim();
+    let name = document.getElementById("signupName").value;
+    let email = document.getElementById("signupEmail").value;
+    let password = document.getElementById("signupPassword").value;
 
-    const isNameValid = validateName();
-    const isEmailValid = validateEmail();
-    const isPasswordValid = validatePassword();
+    let user = {name, email, password};
 
-    if (!isNameValid || !isEmailValid || !isPasswordValid) {
-        return;
-    }
+    console.log(user);
 
-    users.push({name, email, password});
-
-    window.alert("Signup Completed");
+    alert("Signup Completed");
 
     redirectLogin();
 }
@@ -25,46 +19,34 @@ function redirectLogin() {
 }
 
 function validateName() {
-    const name = document.getElementById("signupName").value.trim();
-    const message = document.getElementById("signupnameError");
-
-    const nameRegex =  /^[A-Za-z]{6,}$/;
-
-    if (!nameRegex.test(name)) {
-        message.innerText = "The Name should not contain numbers or symbols and must be larger than 5 charaters";
-        return false;
+    let name = document.getElementById("signupName").value;
+    
+    if (name.length <= 5 || /[^a-zA-Z]/.test(name)) {
+        document.getElementById("signupnameError").innerText = "Name should not contain numbers or symbols and must be larger than 5 charaters ";
     } else {
-        message.innerText = "";
-        return true;
+        document.getElementById("signupnameError").innerText = "";
     }
 }
 
 function validateEmail() {
-    const email = document.getElementById("signupEmail").value.trim();
-    const message = document.getElementById("signupemailError");
+    let email = document.getElementById("signupEmail").value.trim();
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailRegex.test(email)) {
-        message.innerText = "Invalid email format";
-        return false;
+    if (!email.match(pattern)) {
+        document.getElementById("signupemailError").innerText = "Enter valid email";
     } else {
-        message.innerText = "";
-        return true;
+        document.getElementById("signupemailError").innerText = "";
     }
 }
 
 function validatePassword() {
-    const password = document.getElementById("signupPassword").value.trim();
-    const message = document.getElementById("signuppasswordError");
+    let password = document.getElementById("signupPassword").value.trim();
+    let pattern =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8}$/;
 
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8}$/;
-
-    if (!passwordRegex.test(password)) {
-        message.innerText = "Password must be exactly 8 charaters with uppercase, lowercase, number & symbol.";
-        return false;
+    if (!password.match(pattern)) {
+        document.getElementById("signuppasswordError").innerText = "Password must be 8 characters with numbers,symbols and  one capital case";
     } else {
-        message.innerText = "";
-        return true;
+        document.getElementById("signuppasswordError").innerText = "";
     }
 }
+
